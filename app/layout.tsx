@@ -40,7 +40,7 @@ export default function RootLayout({
                 </Link>
                 <div className="relative group">
                   <button className="inline-flex items-center px-1 pt-1 text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors h-full">
-                    Projects
+                    Projets
                     <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -53,7 +53,7 @@ export default function RootLayout({
                         rel="noreferrer"
                         className="block px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700"
                       >
-                        Projet GEOMetrics
+                        GEOMetrics
                       </Link>
                     </div>
                   </div>

@@ -1,28 +1,51 @@
 const resume = {
   name: "Antoine Combaldieu",
-  title: "Ingénieur Data & IA",
+  title: "Data Engineer Junior - Big Data & Cloud",
   location: "Paris, France",
+  availability: "Disponible à partir de septembre 2026 - France entière",
   email: "antoine@combaldieu.fr",
   phone: "+33 7 69 49 63 12",
   linkedin: "https://www.linkedin.com/in/antoine-combaldieu-304ba3220/",
   github: "https://github.com/AntoineCmbld",
   about:
-    "L'intelligence artificielle a ouvert les yeux sur l'importance des données et sur la nécessité de les transformer en connaissances et solutions concrètes. Passionné par la Data et l'IA, je cherche à mettre mes compétences en data engineering et machine learning au service de projets à fort impact.",
+    "Passionné par la data et ses applications concrètes, je me spécialise dans l'exploitation, l'analyse et la valorisation des données. Le développement rapide de l'intelligence artificielle a naturellement orienté mon parcours vers le deep learning et les infrastructures cloud.",
   experience: [
     {
-      role: "Alternant Data",
-      company: "GRDF - Appui Chef d'agence",
-      period: "2025 — Présent",
+      role: "Alternance",
+      company: "GRDF - Appui Chef d'Agence",
+      period: "Actuel",
       bullets: [
-        "Support des chefs d'agence dans la gestion opérationnelle.",
-        "Analyse de données et optimisation des processus internes.",
+        "Mise à disposition pour le management des données opérationnelles et automatisation cloud des tâches de l'agence avec Python, Office Script (TypeScript) et Power Automate.",
+        "Utilisation de SQL, Power Query, PowerBI et flux de données Microsoft Fabric.",
       ],
     },
     {
-      role: "CDI Caviste",
-      company: "Keskongout'",
-      period: "2024-Présent",
+      role: "CDI",
+      company: "Caviste Keskongout'",
+      period: "Actuel",
       bullets: ["Employé polyvalent chez un caviste le week-end."],
+    },
+    {
+      role: "Stage commercial",
+      company: "Efrei Paris",
+      period: "2023",
+      bullets: [
+        "Mise en avant de l'école lors de journées portes ouvertes et forums étudiants.",
+      ],
+    },
+    {
+      role: "Stagiaire",
+      company: "Sipa Press",
+      period: "2022",
+      bullets: [
+        "Aide administrative, tri de photos, accompagnement d'un stagiaire photographe.",
+      ],
+    },
+    {
+      role: "CDD - Ouvrier agricole saisonnier",
+      company: "SCEA Famille Vimeney",
+      period: "2020",
+      bullets: ["Effeuillage et taille des vignes."],
     },
   ],
   education: [
@@ -30,50 +53,83 @@ const resume = {
       degree: "Ingénieur en filière Big Data et Machine Learning",
       school: "Efrei Paris",
       year: "2021 — 2026",
+      description: "École d'ingénieur informatique en 5 ans.",
     },
     {
-      degree: "Semestre à l’étranger",
+      degree: "Semestre à l'étranger",
       school: "APU Kuala Lumpur",
       year: "2023",
+      description: "Semestre d'étude en Malaisie.",
     },
   ],
-  skills: [
-    "Python (Numpy, Pandas, Matplotlib, Plotly, Streamlit, FastAPI)",
-    "Machine learning (sklearn)",
-    "Deep learning (PyTorch, TensorFlow)",
-    "TypeScript / JavaScript / Node.js / React / Next.js",
-    "HTML / CSS / PHP / SQL / MySQL / MongoDB / Postgresql / C / Java / Scala / Matlab",
-    "Git, Docker, Kubernetes, Windows / Linux, Azure",
-  ],
+  skills: {
+    python: [
+      "Manipulation, analyse et visualisation de données (NumPy, Pandas, Matplotlib, Plotly, Streamlit)",
+      "Data engineering : ingestion, transformation et pipelines de données",
+      "Streaming de données avec Apache Kafka (confluent-kafka, kafka-python)",
+      "Développement d'APIs et services backend avec FastAPI",
+      "Machine learning avec scikit-learn, deep learning avec PyTorch et TensorFlow",
+    ],
+    infrastructure: [
+      "Machines virtuelles, conteneurisation et orchestration : VMWare, Virtualbox, Docker, Kubernetes",
+      "Déploiement et configuration avec Helm",
+      "CI/CD avec GitHub Actions",
+    ],
+    other: [
+      "Bases de données SQL et NoSQL",
+      "Frontend : Next.js",
+      "Backend : Golang",
+    ],
+  },
   projects: [
     {
-      name: "Outil de diagnostic cancer en imagerie médicale",
-      description: "Détection de cancer avec TensorFlow.",
-      link: "https://testlink.com",
+      name: "Plateforme microservices d'analyse du référencement des entreprises sur différents modèles de LLM",
+      description:
+        "Conception, développement et déploiement avec des services backend FastAPI, déployés sur Kubernetes.",
+      link: "https://geometrics.combaldieu.fr",
+      github: "https://github.com/orgs/geo-metrics-project/repositories",
     },
     {
-      name: "Application d'analyse des performances GEO (generative engine optimization) des entreprises",
-      description: "Création d'un backend microservices avec FastAPI déployé sur Kubernetes.",
-      link: "https://testlink.com",
+      name: "Configuration du stack Ory",
+      description:
+        "Authentification et autorisations pour projets web, déployé sur Kubernetes.",
+      link: "https://auth.combaldieu.fr",
+      github: "https://github.com/orgs/geo-metrics-project/repositories",
+    },
+    {
+      name: "Outils de visualisation et d'aide à la décision",
+      description:
+        "Applications interactives développées avec Streamlit.",
+      github: "https://github.com/AntoineCmbld/streamlit-resume",
+    },
+    {
+      name: "Outil de diagnostic pour la détection de cancer en imagerie médicale",
+      description: "Conception avec TensorFlow.",
+      github: "https://github.com/AntoineCmbld/cancer_detection",
+    },
+    {
+      name: "Service d'amélioration automatique de texte",
+      description: "Basé sur l'API de ChatGPT.",
+      github: "https://github.com/AntoineCmbld/MailPerfect",
     },
   ],
   associations: [
     {
-      role: "Président",
+      role: "Président de l'association Millésime (Oenologie)",
       name: "Association Millésime",
       period: "2024 — 2025",
     },
     {
-      role: "Musicien",
-      name: "Guitare, piano, chant",
-      period: "2023 — Présent",
+      role: "Membre de l'association de musique (Guitare, piano, chant)",
+      name: "Association de musique",
+      period: "2023 — 2026",
     },
   ],
   languages: [
     {
       language: "Français",
       level: "Langue maternelle",
-      note: "Certificat Voltaire : 789",
+      note: "Certificat Voltaire : 789 - Orthographe affaires",
       link: "https://mon.certificat-voltaire.fr/verification-certificat?code=4GMUKCP",
     },
     {

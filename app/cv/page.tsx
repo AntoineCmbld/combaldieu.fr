@@ -58,13 +58,14 @@ export default function CV() {
               >
                 GitHub
               </a>
-              <button
-                onClick={() => window.print()}
+              <a
+                href="/CV_Antoine_Combaldieu.pdf"
+                download
                 className="text-sm px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 active:scale-95 transition-all shadow-md hover:shadow-lg font-medium"
                 aria-label="Download or print resume"
               >
-                Print / Save PDF
-              </button>
+                Download PDF
+              </a>
             </div>
           </div>
         </div>

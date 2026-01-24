@@ -93,7 +93,7 @@ const resume = {
       name: "Configuration du stack Ory",
       description:
         "Authentification et autorisations pour projets web, déployé sur Kubernetes.",
-      link: "https://auth.combaldieu.fr",
+      link: "https://auth.combaldieu.fr/auth/login",
       github: "https://github.com/orgs/geo-metrics-project/repositories",
     },
     {

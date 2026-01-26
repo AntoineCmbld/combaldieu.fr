@@ -1,146 +1,154 @@
 const resume = {
   name: "Antoine Combaldieu",
-  title: "Data Engineer Junior - Big Data & Cloud",
+  title: "Junior Data Engineer – Big Data & Cloud",
   location: "Paris, France",
-  availability: "Disponible à partir de septembre 2026 - France entière",
+  availability: "Available from September 2026 – France & International",
   email: "antoine@combaldieu.fr",
   phone: "+33 7 69 49 63 12",
   linkedin: "https://www.linkedin.com/in/antoine-combaldieu-304ba3220/",
   github: "https://github.com/AntoineCmbld",
+
   about:
-    "Passionné par la data et ses applications concrètes, je me spécialise dans l'exploitation, l'analyse et la valorisation des données. Le développement rapide de l'intelligence artificielle a naturellement orienté mon parcours vers le deep learning et les infrastructures cloud.",
+    "Passionate about data and its real-world applications, I specialize in data exploitation, analysis, and value creation. The rapid development of artificial intelligence has naturally guided my academic path toward deep learning and cloud infrastructures.",
+
   experience: [
     {
-      role: "Alternance",
-      company: "GRDF - Appui Chef d'Agence",
-      period: "Actuel",
+      role: "Apprenticeship",
+      company: "GRDF (France’s leading gas distribution company)",
+      period: "Present",
       bullets: [
-        "Mise à disposition pour le management des données opérationnelles et automatisation cloud des tâches de l'agence avec Python, Office Script (TypeScript) et Power Automate.",
-        "Utilisation de SQL, Power Query, PowerBI et flux de données Microsoft Fabric.",
+        "Management of operational data and cloud-based automation of agency tasks using Python, Office Scripts (TypeScript), and Power Automate.",
+        "Use of SQL, Power Query, Power BI, and Microsoft Fabric data pipelines.",
       ],
     },
     {
-      role: "CDI",
+      role: "Permanent Contract (Part-time)",
       company: "Caviste Keskongout'",
-      period: "Actuel",
-      bullets: ["Employé polyvalent chez un caviste le week-end."],
+      period: "Present",
+      bullets: ["Weekend polyvalent employee in a wine shop."],
     },
     {
-      role: "Stage commercial",
+      role: "Sales Internship",
       company: "Efrei Paris",
       period: "2023",
       bullets: [
-        "Mise en avant de l'école lors de journées portes ouvertes et forums étudiants.",
+        "Promotion of the engineering school during open days and student fairs.",
       ],
     },
     {
-      role: "Stagiaire",
+      role: "Intern",
       company: "Sipa Press",
       period: "2022",
       bullets: [
-        "Aide administrative, tri de photos, accompagnement d'un stagiaire photographe.",
+        "Administrative support, photo sorting, and assistance to a photographer intern.",
       ],
     },
     {
-      role: "CDD - Ouvrier agricole saisonnier",
+      role: "Fixed-term Contract",
       company: "SCEA Famille Vimeney",
       period: "2020",
-      bullets: ["Effeuillage et taille des vignes."],
+      bullets: ["Seasonal agricultural work: vine pruning and leaf removal."],
     },
   ],
+
   education: [
     {
-      degree: "Ingénieur en filière Big Data et Machine Learning",
+      degree: "Engineering Degree – Big Data & Machine Learning",
       school: "Efrei Paris",
       year: "2021 — 2026",
-      description: "École d'ingénieur informatique en 5 ans.",
+      description:
+        "Five-year engineering program specializing in data, machine learning, and artificial intelligence.",
     },
     {
-      degree: "Semestre à l'étranger",
+      degree: "Study Abroad Semester",
       school: "APU Kuala Lumpur",
       year: "2023",
-      description: "Semestre d'étude en Malaisie.",
+      description: "Academic semester completed in Malaysia.",
     },
   ],
-  skills: {
-    python: [
-      "Manipulation, analyse et visualisation de données (NumPy, Pandas, Matplotlib, Plotly, Streamlit)",
-      "Data engineering : ingestion, transformation et pipelines de données",
-      "Streaming de données avec Apache Kafka (confluent-kafka, kafka-python)",
-      "Développement d'APIs et services backend avec FastAPI",
-      "Machine learning avec scikit-learn, deep learning avec PyTorch et TensorFlow",
-    ],
-    infrastructure: [
-      "Machines virtuelles, conteneurisation et orchestration : VMWare, Virtualbox, Docker, Kubernetes",
-      "Déploiement et configuration avec Helm",
-      "CI/CD avec GitHub Actions",
-    ],
-    other: [
-      "Bases de données SQL et NoSQL",
-      "Frontend : Next.js",
-      "Backend : Golang",
-    ],
-  },
+
   projects: [
     {
-      name: "Plateforme microservices d'analyse du référencement des entreprises sur différents modèles de LLM",
+      name: "Microservices platform for company visibility analysis across multiple LLM models",
       description:
-        "Conception, développement et déploiement avec des services backend FastAPI, déployés sur Kubernetes.",
+        "Design, development, and deployment of FastAPI backend microservices deployed on Kubernetes.",
       link: "https://geometrics.combaldieu.fr",
       github: "https://github.com/orgs/geo-metrics-project/repositories",
     },
     {
-      name: "Configuration du stack Ory",
+      name: "Ory stack configuration and deployment",
       description:
-        "Authentification et autorisations pour projets web, déployé sur Kubernetes.",
+        "Authentication and authorization setup for web projects deployed on Kubernetes.",
       link: "https://auth.combaldieu.fr/auth/login",
       github: "https://github.com/orgs/geo-metrics-project/repositories",
     },
     {
-      name: "Outils de visualisation et d'aide à la décision",
+      name: "Decision-support and data visualization tools",
       description:
-        "Applications interactives développées avec Streamlit.",
+        "Interactive applications developed using Streamlit.",
       github: "https://github.com/AntoineCmbld/streamlit-resume",
     },
     {
-      name: "Outil de diagnostic pour la détection de cancer en imagerie médicale",
-      description: "Conception avec TensorFlow.",
+      name: "Medical imaging diagnostic tool for cancer detection",
+      description: "Designed using TensorFlow.",
       github: "https://github.com/AntoineCmbld/cancer_detection",
     },
     {
-      name: "Service d'amélioration automatique de texte",
-      description: "Basé sur l'API de ChatGPT.",
+      name: "Automatic text enhancement service",
+      description: "Based on the ChatGPT API.",
       github: "https://github.com/AntoineCmbld/MailPerfect",
     },
   ],
+
+  skills: {
+    python: [
+      "Data manipulation, analysis, and visualization (NumPy, Pandas, Matplotlib, Plotly, Streamlit)",
+      "Data engineering: ingestion, transformation, and data pipelines",
+      "Data streaming with Apache Kafka (confluent-kafka, kafka-python)",
+      "API and backend service development with FastAPI",
+      "Machine learning with scikit-learn; deep learning with PyTorch and TensorFlow",
+    ],
+    infrastructure: [
+      "Virtual machines, containerization, and orchestration: VMware, VirtualBox, Docker, Kubernetes",
+      "Deployment and configuration using Helm",
+      "CI/CD pipelines with GitHub Actions",
+    ],
+    other: [
+      "SQL and NoSQL databases",
+      "Frontend: Next.js",
+      "Backend: Golang",
+    ],
+  },
+
   associations: [
     {
-      role: "Président de l'association Millésime (Oenologie)",
-      name: "Association Millésime",
+      role: "President – Oenology Association",
+      name: "Millésime",
       period: "2024 — 2025",
     },
     {
-      role: "Membre de l'association de musique (Guitare, piano, chant)",
-      name: "Association de musique",
+      role: "Member – Music Association",
+      name: "Music Association",
       period: "2023 — 2026",
     },
   ],
+
   languages: [
     {
-      language: "Français",
-      level: "Langue maternelle",
-      note: "Certificat Voltaire : 789 - Orthographe affaires",
+      language: "French",
+      level: "Native",
+      note: "Voltaire Certificate: 789 – Business-level spelling",
       link: "https://mon.certificat-voltaire.fr/verification-certificat?code=4GMUKCP",
     },
     {
-      language: "Anglais",
-      level: "Courant",
+      language: "English",
+      level: "Fluent",
       note: "TOEIC: 980",
       link: "https://www.etsglobal.org/fr/en/digital-score-report/6C93925F32A8456B918A041F62C3F7F4D6736BFC370C312C988A9C22C61EFD21bDhqeWlmV0kzT3VRSGlHbXh3TDBLKzcyK1BENFBSeUUrVFk2YTV4SVU1S1NzSHAw",
     },
     {
-      language: "Espagnol",
-      level: "Intermédiaire",
+      language: "Spanish",
+      level: "Intermediate",
     },
   ],
 };

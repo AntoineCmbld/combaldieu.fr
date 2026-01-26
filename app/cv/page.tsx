@@ -196,7 +196,7 @@ export default function CV() {
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold text-black dark:text-zinc-50 mb-5 pb-2 border-b-2 border-blue-500 dark:border-blue-600">
-            Projets
+            Projects
           </h2>
           <div className="space-y-4">
             {resume.projects.map((project, idx) => (
@@ -219,7 +219,7 @@ export default function CV() {
                       rel="noreferrer"
                       className="inline-block text-xs px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
                     >
-                      Voir le projet →
+                      View project →
                     </a>
                   )}
                   {project.github && (
@@ -244,7 +244,7 @@ export default function CV() {
         <section className="mb-8 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-xl font-semibold text-black dark:text-zinc-50 mb-4 pb-2 border-b border-zinc-300 dark:border-zinc-700">
-              Associations étudiantes
+              Student Associations
             </h2>
             <div className="space-y-3">
               {resume.associations.map((assoc, i) => (
@@ -266,7 +266,7 @@ export default function CV() {
 
           <div>
             <h2 className="text-xl font-semibold text-black dark:text-zinc-50 mb-4 pb-2 border-b border-zinc-300 dark:border-zinc-700">
-              Langues
+              Languages
             </h2>
             <div className="space-y-2">
               {resume.languages.map((lang, i) => (
@@ -307,7 +307,7 @@ export default function CV() {
           className="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-6 animate-slide-up opacity-0"
           style={{ animationDelay: "320ms" }}
         >
-          <p>Ouvert aux opportunités — available for full-time roles.</p>
+          <p>Available for full-time roles.</p>
           <p className="mt-1">
             <a
               href={`mailto:${resume.email}`}

@@ -178,7 +178,7 @@ export default function CV() {
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">Technologies complémentaires</h3>
+                <h3 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">Additional Technologies</h3>
                 <div className="flex flex-wrap gap-2">
                   {resume.skills.other.map((s, i) => (
                     <span

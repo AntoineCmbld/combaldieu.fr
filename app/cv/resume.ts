@@ -65,7 +65,7 @@ const resume = {
     {
       name: "Geometrics",
       description:
-        "Event-driven microservices platform for analyzing company visibility in LLMs: automated question generation, inference using HuggingFace, multilingual translation via LibreTranslate, asynchronous orchestration with NATS Jetstream, FastAPI and Gin backends deployed on Kubernetes with Ory stack for authentication.",
+        "Event-driven microservices platform for analyzing company visibility in LLMs: inference using HuggingFace, multilingual translation via LibreTranslate, asynchronous orchestration with NATS Jetstream, FastAPI and Gin backends deployed on Kubernetes with Ory stack for authentication.",
       link: "https://geometrics.combaldieu.fr",
       github: "https://github.com/orgs/geo-metrics-project/repositories",
     },

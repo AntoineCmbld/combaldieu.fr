@@ -59,7 +59,7 @@ export default function CV() {
                 GitHub
               </a>
               <a
-                href="/CV_Antoine_Combaldieu.pdf"
+                href="/CV_Antoine_Combaldieu_International.pdf"
                 download
                 className="text-sm px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 active:scale-95 transition-all shadow-md hover:shadow-lg font-medium"
                 aria-label="Download or print resume"
@@ -191,6 +191,32 @@ export default function CV() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold text-black dark:text-zinc-50 mb-5 pb-2 border-b-2 border-blue-500 dark:border-blue-600">
+            Certifications
+          </h2>
+          <div className="space-y-3">
+            {resume.certifications.map((cert, i) => (
+              <div
+                key={i}
+                className="p-4 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/30 animate-slide-up opacity-0"
+                style={{ animationDelay: `${250 + i * 60}ms` }}
+              >
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">{cert.year}</p>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm md:text-base font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {cert.name}
+                </a>
+                <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-1">{cert.issuer}</p>
+              </div>
+            ))}
           </div>
         </section>
 

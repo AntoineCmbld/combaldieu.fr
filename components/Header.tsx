@@ -1,48 +1,15 @@
 'use client';
 
-import { User, LogOut, ChevronDown, Settings, BarChart, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
-  const [session, setSession] = useState(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const fetchSession = async () => {
-      try {
-        const baseUrl = process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr";
-        const response = await fetch(`${baseUrl}/sessions/whoami`, {
-          credentials: 'include',
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setSession(data);
-          setIsLoggedIn(true);
-          setUserName(data.identity.traits.email);
-          setUserEmail(data.identity.traits.email);
-        } else {
-          setIsLoggedIn(false);
-          setSession(null);
-        }
-      } catch (error) {
-        setIsLoggedIn(false);
-        setSession(null);
-      }
-    };
-
-    fetchSession();
-
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setShowDropdown(false);
-      }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setShowMobileMenu(false);
       }
@@ -52,37 +19,10 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleLogin = () => {
-    const baseUrl = process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr";
-    window.location.href = `${baseUrl}/self-service/login/browser`;
-  };
-
-  const handleRegister = () => {
-    const baseUrl = process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr";
-    window.location.href = `${baseUrl}/self-service/registration/browser`;
-  };
-
-  const handleLogout = async () => {
-    try {
-      const baseUrl = process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr";
-      const response = await fetch(`${baseUrl}/self-service/logout/browser`, {
-        credentials: 'include',
-      });
-      if (response.ok) {
-        const data = await response.json();
-        window.location.href = data.logout_url;
-      } else {
-        console.error('Failed to initiate logout');
-      }
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  };
-
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-sm">
-      <div className="container mx-auto px-4 py-4">
-        <nav className="relative flex items-center justify-between" role="navigation" aria-label="Navigation principale">
+      <div className="container mx-auto px-4">
+        <nav className="relative flex min-h-[72px] items-center justify-between" role="navigation" aria-label="Navigation principale">
 
           {/* Left spacer (mirrors auth width for centering) */}
           <div className="flex-1" />
@@ -115,83 +55,8 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Right: Auth */}
+          {/* Right: Mobile menu */}
           <div className="flex items-center gap-4">
-            {isLoggedIn ? (
-              <div className="hidden md:block relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  aria-expanded={showDropdown}
-                  aria-haspopup="true"
-                  aria-label="Menu utilisateur"
-                >
-                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-semibold">
-                    {userName.split(' ').map((n) => n[0]).join('').toUpperCase()}
-                  </div>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${showDropdown ? 'rotate-180' : ''}`}
-                    aria-hidden="true"
-                  />
-                </button>
-
-                {showDropdown && (
-                  <div
-                    className="absolute right-0 mt-2 w-56 bg-white dark:bg-zinc-900 rounded-lg shadow-md border border-zinc-200 dark:border-zinc-800 py-2 z-50"
-                    role="menu"
-                  >
-                    <div className="px-4 py-3 border-b border-zinc-200 dark:border-zinc-800">
-                      <p className="text-sm font-medium text-black dark:text-zinc-50">{userName}</p>
-                    </div>
-                    <Link
-                      href="/reports"
-                      onClick={() => setShowDropdown(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 mx-1 rounded"
-                      role="menuitem"
-                    >
-                      <BarChart className="w-4 h-4" aria-hidden="true" />
-                      Mes rapports
-                    </Link>
-                    <Link
-                      href={`${process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr"}/self-service/settings/browser`}
-                      onClick={() => setShowDropdown(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 mx-1 rounded"
-                      role="menuitem"
-                    >
-                      <Settings className="w-4 h-4" aria-hidden="true" />
-                      Paramètres de compte
-                    </Link>
-                    <button
-                      onClick={handleLogout}
-                      className="flex items-center gap-2 w-full px-4 py-2 text-sm text-red-600 hover:bg-zinc-100 dark:text-red-400 dark:hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 mx-1 rounded mt-2 border-t border-zinc-200 dark:border-zinc-800"
-                      role="menuitem"
-                    >
-                      <LogOut className="w-4 h-4" aria-hidden="true" />
-                      Déconnexion
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="hidden md:flex items-center gap-3">
-                <button
-                  onClick={handleLogin}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  aria-label="Se connecter"
-                >
-                  <User className="w-4 h-4" aria-hidden="true" />
-                  Connexion
-                </button>
-                <button
-                  onClick={handleRegister}
-                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 dark:focus:ring-offset-zinc-900"
-                  aria-label="S'inscrire"
-                >
-                  S'inscrire
-                </button>
-              </div>
-            )}
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -236,52 +101,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {isLoggedIn ? (
-              <div className="border-t border-zinc-200 dark:border-zinc-800 pt-2 mt-2 space-y-2">
-                <div className="px-4 py-2">
-                  <p className="text-sm font-medium text-black dark:text-zinc-50">{userName}</p>
-                </div>
-                <Link
-                  href="/reports"
-                  onClick={() => setShowMobileMenu(false)}
-                  className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 rounded-lg transition-colors"
-                >
-                  <BarChart className="w-4 h-4 inline mr-2" aria-hidden="true" />
-                  Mes rapports
-                </Link>
-                <Link
-                  href={`${process.env.NEXT_PUBLIC_KRATOS_URL || "https://kratos.combaldieu.fr"}/self-service/settings/browser`}
-                  onClick={() => setShowMobileMenu(false)}
-                  className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 rounded-lg transition-colors"
-                >
-                  <Settings className="w-4 h-4 inline mr-2" aria-hidden="true" />
-                  Paramètres de compte
-                </Link>
-                <button
-                  onClick={() => { handleLogout(); setShowMobileMenu(false); }}
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-zinc-100 dark:text-red-400 dark:hover:bg-zinc-800 rounded-lg transition-colors border-t border-zinc-200 dark:border-zinc-800"
-                >
-                  <LogOut className="w-4 h-4 inline mr-2" aria-hidden="true" />
-                  Déconnexion
-                </button>
-              </div>
-            ) : (
-              <div className="border-t border-zinc-200 dark:border-zinc-800 pt-2 mt-2 space-y-2">
-                <button
-                  onClick={() => { handleLogin(); setShowMobileMenu(false); }}
-                  className="block w-full text-left px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
-                >
-                  <User className="w-4 h-4 inline mr-2" aria-hidden="true" />
-                  Connexion
-                </button>
-                <button
-                  onClick={() => { handleRegister(); setShowMobileMenu(false); }}
-                  className="block w-full text-left px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all text-center"
-                >
-                  S'inscrire
-                </button>
-              </div>
-            )}
           </div>
         )}
       </div>
